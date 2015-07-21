@@ -39,7 +39,7 @@ public enum RequestUtil {
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setUseCaches(false);
                 httpURLConnection.connect();
-                scanner = new Scanner(httpURLConnection.getInputStream());
+                scanner = new Scanner(httpURLConnection.getInputStream(), "GBK");
                 while (scanner.hasNext()) {
                     String tempStr = scanner.nextLine().trim();
                     respSb.append(tempStr);

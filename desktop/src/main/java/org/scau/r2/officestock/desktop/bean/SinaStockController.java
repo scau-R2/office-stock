@@ -1,14 +1,13 @@
 package org.scau.r2.officestock.desktop.bean;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.scau.r2.officestock.desktop.model.StockVO;
+import org.scau.r2.officestock.desktop.util.JsonUtil;
 import org.scau.r2.officestock.desktop.util.RequestUtil;
 import org.scau.r2.officestock.desktop.util.SinaStockInfoAnalyzer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +18,6 @@ import java.util.Map;
  */
 @Component
 public class SinaStockController {
-
-    private ObjectMapper mapper = new ObjectMapper();
 
     @Value("${sina.stock.api.list.url}")
     private String apiUrl = null;
@@ -44,13 +41,7 @@ public class SinaStockController {
         List<Map<String, Object>> respResult = SinaStockInfoAnalyzer.toMap(hq_str);
         List<StockVO> result = new ArrayList<StockVO>();
         for(Map<String, Object> map : respResult) {
-            StockVO stockVO = null;
-            try {
-                String tempStr = mapper.writeValueAsString(map);
-                stockVO = mapper.readValue(tempStr, StockVO.class);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            StockVO stockVO = JsonUtil.toBean(JsonUtil.toString(map), StockVO.class);
             result.add(stockVO);
         }
         return result;
