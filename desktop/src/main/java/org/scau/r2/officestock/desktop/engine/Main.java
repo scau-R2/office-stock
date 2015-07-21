@@ -1,6 +1,6 @@
 package org.scau.r2.officestock.desktop.engine;
 
-import org.scau.r2.officestock.desktop.bean.SinaStockController;
+import org.scau.r2.officestock.desktop.controller.SinaStockController;
 import org.scau.r2.officestock.desktop.context.SpringApplicationContextFactory;
 import org.scau.r2.officestock.desktop.model.StockVO;
 import org.scau.r2.officestock.desktop.util.JsonUtil;

@@ -1,6 +1,5 @@
-package org.scau.r2.officestock.desktop.bean;
+package org.scau.r2.officestock.desktop.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.scau.r2.officestock.desktop.model.StockVO;
 import org.scau.r2.officestock.desktop.util.JsonUtil;
 import org.scau.r2.officestock.desktop.util.RequestUtil;
