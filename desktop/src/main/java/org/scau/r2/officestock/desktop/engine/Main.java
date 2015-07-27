@@ -1,12 +1,8 @@
 package org.scau.r2.officestock.desktop.engine;
 
-import org.scau.r2.officestock.desktop.controller.SinaStockController;
-import org.scau.r2.officestock.desktop.context.SpringApplicationContextFactory;
-import org.scau.r2.officestock.desktop.model.StockVO;
-import org.scau.r2.officestock.desktop.util.JsonUtil;
+import org.scau.r2.officestock.desktop.view.MainFrame;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.*;
 
 /**
  * 程序入口
@@ -15,11 +11,22 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> stockIds = new ArrayList<String>();
-        stockIds.add("sh601003");
-        stockIds.add("sh601001");
-        List<StockVO> stocks = SpringApplicationContextFactory.getInstance().getBean("sinaStockController", SinaStockController.class).getDateByStockId(stockIds);
-        System.out.println(JsonUtil.toString(stocks));
+        String lookAndFeel = UIManager.getSystemLookAndFeelClassName();
+        try {
+            UIManager.setLookAndFeel(lookAndFeel);
+            JFrame mainFrame = new MainFrame();
+            mainFrame.setVisible(true);
+            //SwingUtilities.updateComponentTreeUI(mainFrame);
+            //mainFrame.pack();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class SinaStockInfoAnalyzer {
 
             //根据逗号划分split2[1]
             String[] split4 = split2[1].split(",");
-            stockMap.put("name", split4[0].replace("\"",""));
+            stockMap.put("name", split4[0].replace("\"", ""));
             stockMap.put("openningPrice", split4[1]);
             stockMap.put("closingPrice", split4[2]);
             stockMap.put("currentPrice", split4[3]);

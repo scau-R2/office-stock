@@ -36,10 +36,12 @@ public class SinaStockController {
             urlSb.append(stockId).append(",");
         }
         urlSb.deleteCharAt(urlSb.length() - 1);
+        //使用http get方式向sina股票api接口获取数据
         String hq_str = RequestUtil.HTTP.get(urlSb.toString());
+        //把sina返回的数据转成应用bean
         List<Map<String, Object>> respResult = SinaStockInfoAnalyzer.toMap(hq_str);
         List<StockVO> result = new ArrayList<StockVO>();
-        for(Map<String, Object> map : respResult) {
+        for (Map<String, Object> map : respResult) {
             StockVO stockVO = JsonUtil.toBean(JsonUtil.toString(map), StockVO.class);
             result.add(stockVO);
         }
