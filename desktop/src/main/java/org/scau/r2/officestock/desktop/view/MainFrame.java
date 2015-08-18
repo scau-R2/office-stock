@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
     private void init() {
         //设置窗体基本属性
         //窗体默认大小
-        this.setSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize().width / 3, Toolkit.getDefaultToolkit().getScreenSize().height / 2));
+        this.setSize(new Dimension(1024, 768));
         //窗体颜色
         this.setBackground(Color.BLACK);
         //窗体默认居中

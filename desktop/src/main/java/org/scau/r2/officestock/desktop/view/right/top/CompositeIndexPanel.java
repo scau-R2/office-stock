@@ -9,10 +9,10 @@ import java.io.UnsupportedEncodingException;
  * Created by zhengjn on 2015/7/27.
  */
 public class CompositeIndexPanel extends JPanel {
-    private JLabel szzsText = new JLabel();
-    private JLabel shzsText = new JLabel();
+    private JLabel szzsText = new JLabel();//上证指数
+    private JLabel szczText = new JLabel();//深圳成指
     private JLabel szzsValue = new JLabel();
-    private JLabel shzsValue = new JLabel();
+    private JLabel szczValue = new JLabel();
 
     public CompositeIndexPanel() {
         super();
@@ -21,69 +21,38 @@ public class CompositeIndexPanel extends JPanel {
 
     private void init() {
         this.setBackground(Color.BLACK);
-        GridBagLayout gbLayout = new GridBagLayout();
-        this.setLayout(gbLayout);
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.VERTICAL;
+        GridLayout gLayout = new GridLayout(1, 6);
+        this.setLayout(gLayout);
 
-        shzsText.setPreferredSize(new Dimension(70, 22));
-        shzsText.setBackground(Color.BLACK);
-        shzsText.setForeground(Color.WHITE);
-        String t1 = null;
+        JLabel zsmcLabel = createNewLable("指数名称");
+        this.add(zsmcLabel);
+
+        JLabel dqzsLabel = createNewLable("当前指数");
+        this.add(dqzsLabel);
+
+        JLabel dqjgLabel = createNewLable("当前价格");
+        this.add(dqjgLabel);
+
+        JLabel zdlLabel = createNewLable("涨跌");
+        this.add(zdlLabel);
+
+        JLabel cjlLabel = createNewLable("成交量（手）");
+        this.add(cjlLabel);
+
+        JLabel cjeLabel = createNewLable("成交额（手）");
+        this.add(cjeLabel);
+    }
+
+    private JLabel createNewLable(String name) {
+        JLabel jl = new JLabel();
+        jl.setBackground(Color.BLACK);
+        jl.setForeground(Color.WHITE);
         try {
-            t1 = new String("上证指数:".getBytes("GBK"), "UTF-8");
+            name = new String(name.getBytes("GBK"), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        shzsText.setText(t1);
-        c.gridx = 0;
-        c.gridy = 0;
-        gbLayout.setConstraints(shzsText, c);
-        this.add(shzsText);
-
-        shzsValue.setPreferredSize(new Dimension(250, 22));
-        shzsValue.setBackground(Color.BLACK);
-        shzsValue.setForeground(Color.WHITE);
-        String v1 = null;
-        try {
-            v1 = new String("0".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        shzsValue.setText(v1);
-        c.gridx = 1;
-        c.gridy = 0;
-        gbLayout.setConstraints(shzsValue, c);
-        this.add(shzsValue);
-
-        szzsText.setPreferredSize(new Dimension(70, 22));
-        szzsText.setBackground(Color.BLACK);
-        szzsText.setForeground(Color.WHITE);
-        String t2 = null;
-        try {
-            t2 = new String("深证指数:".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        szzsText.setText(t2);
-        c.gridx = 0;
-        c.gridy = 1;
-        gbLayout.setConstraints(szzsText, c);
-        this.add(szzsText);
-
-        szzsValue.setPreferredSize(new Dimension(250, 22));
-        szzsValue.setBackground(Color.BLACK);
-        szzsValue.setForeground(Color.WHITE);
-        String v2 = null;
-        try {
-            v2 = new String("0".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        szzsValue.setText(v2);
-        c.gridx = 1;
-        c.gridy = 1;
-        gbLayout.setConstraints(szzsValue, c);
-        this.add(szzsValue);
+        jl.setText(name);
+        return jl;
     }
 }

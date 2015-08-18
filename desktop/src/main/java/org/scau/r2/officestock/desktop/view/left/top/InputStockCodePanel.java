@@ -15,7 +15,6 @@ import java.io.UnsupportedEncodingException;
  * Created by zhengjn on 2015/7/27.
  */
 public class InputStockCodePanel extends JPanel {
-    private JLabel iscLabel = new JLabel();
     private JTextField iscTextField = new JTextField();
     private JButton iscButton = new JButton();
 
@@ -32,6 +31,7 @@ public class InputStockCodePanel extends JPanel {
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
 
+        JLabel iscLabel = new JLabel();
         iscLabel.setPreferredSize(new Dimension(200, 22));
         iscLabel.setBackground(Color.BLACK);
         iscLabel.setForeground(Color.WHITE);
@@ -72,6 +72,22 @@ public class InputStockCodePanel extends JPanel {
         c.gridy = 1;
         gbLayout.setConstraints(iscButton, c);
         this.add(iscButton);
+
+        JLabel aLabel = new JLabel();
+        aLabel.setPreferredSize(new Dimension(200, 22));
+        aLabel.setBackground(Color.BLACK);
+        aLabel.setForeground(Color.WHITE);
+        String t3 = null;
+        try {
+            t3 = new String("确保股票代码".getBytes("GBK"), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        aLabel.setText(t3);
+        c.gridx = 0;
+        c.gridy = 2;
+        gbLayout.setConstraints(aLabel, c);
+        this.add(aLabel);
 
         iscTextField.setDocument(new InputDocument());
 
