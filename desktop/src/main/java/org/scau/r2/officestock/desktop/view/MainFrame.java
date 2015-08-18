@@ -38,13 +38,13 @@ public class MainFrame extends JFrame {
         int w = (Toolkit.getDefaultToolkit().getScreenSize().width - this.getSize().width) / 2;
         int h = (Toolkit.getDefaultToolkit().getScreenSize().height - this.getSize().height) / 2;
         this.setLocation(w, h);
-
         //窗体标题栏以及边框处理
         this.setExtendedState(JFrame.NORMAL);
 
         //布局
         Container containerPane = this.getContentPane();
         containerPane.setLayout(new BorderLayout(0, 0));
+        containerPane.setBackground(Color.black);
         //布局左边面板
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BorderLayout(0, 0));

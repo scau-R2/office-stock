@@ -11,22 +11,8 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        String lookAndFeel = UIManager.getSystemLookAndFeelClassName();
-        try {
-            UIManager.setLookAndFeel(lookAndFeel);
-            JFrame mainFrame = new MainFrame();
-            mainFrame.setVisible(true);
-            //SwingUtilities.updateComponentTreeUI(mainFrame);
-            //mainFrame.pack();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
+        JFrame mainFrame = new MainFrame();
+        mainFrame.setVisible(true);
     }
 
 }
