@@ -3,8 +3,6 @@ package org.scau.r2.officestock.desktop.view.left.top;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
