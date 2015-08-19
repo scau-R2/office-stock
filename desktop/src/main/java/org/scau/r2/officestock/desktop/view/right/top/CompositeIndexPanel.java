@@ -78,11 +78,6 @@ public class CompositeIndexPanel extends JPanel {
                         setLabelText(labelListArray[i].get(4), list.get(i).getDealVolume());
                         setLabelText(labelListArray[i].get(5), list.get(i).getDealTurn());
                     }
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
             }
         }).start();

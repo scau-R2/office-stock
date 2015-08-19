@@ -61,7 +61,7 @@ public class SinaStockInfoAnalyzer {
                 stockMap.put("time", split4[31].replace("\"", ""));
 
                 result.add(stockMap);
-            } catch (Exception e) {
+            } catch (Throwable e) {
                 e.printStackTrace();
             }
         }
@@ -92,7 +92,7 @@ public class SinaStockInfoAnalyzer {
                 stockMap.put("dealTurn", split4[5].replace("\"", ""));
 
                 result.add(stockMap);
-            } catch (Exception e) {
+            } catch (Throwable e) {
                 e.printStackTrace();
             }
         }

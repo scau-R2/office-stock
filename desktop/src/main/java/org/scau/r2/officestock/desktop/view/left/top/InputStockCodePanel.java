@@ -1,6 +1,7 @@
 package org.scau.r2.officestock.desktop.view.left.top;
 
 import org.apache.commons.lang3.StringUtils;
+import org.scau.r2.officestock.desktop.model.cache.CodeCache;
 
 import javax.swing.*;
 import java.awt.*;
@@ -86,7 +87,8 @@ public class InputStockCodePanel extends JPanel {
                         return;
                     }
                     code = StringUtils.trim(code);
-                    System.out.println(code);
+                    CodeCache.add(code);
+                    iscTextField.setText("");
                 }
             }
 
@@ -104,7 +106,8 @@ public class InputStockCodePanel extends JPanel {
                     return;
                 }
                 code = StringUtils.trim(code);
-                System.out.println(code);
+                CodeCache.add(code);
+                iscTextField.setText("");
             }
         });
     }
