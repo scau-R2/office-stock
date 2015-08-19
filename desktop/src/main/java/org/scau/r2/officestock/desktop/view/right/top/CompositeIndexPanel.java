@@ -6,7 +6,6 @@ import org.scau.r2.officestock.desktop.model.CompositeIndexVO;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
