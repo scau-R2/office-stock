@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
     private void init() {
         //设置窗体基本属性
         //窗体默认大小
-        this.setSize(new Dimension(1024, 768));
+        this.setSize(new Dimension(800, 600));
         //窗体颜色
         this.setBackground(Color.BLACK);
         //窗体默认居中
@@ -40,6 +40,7 @@ public class MainFrame extends JFrame {
         this.setLocation(w, h);
         //窗体标题栏以及边框处理
         this.setExtendedState(JFrame.NORMAL);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         //布局
         Container containerPane = this.getContentPane();

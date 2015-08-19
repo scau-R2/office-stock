@@ -35,13 +35,7 @@ public class InputStockCodePanel extends JPanel {
         iscLabel.setPreferredSize(new Dimension(200, 22));
         iscLabel.setBackground(Color.BLACK);
         iscLabel.setForeground(Color.WHITE);
-        String t1 = null;
-        try {
-            t1 = new String("在下方输入股票代码：".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        iscLabel.setText(t1);
+        iscLabel.setText("在下方输入股票代码：");
         c.gridx = 0;
         c.gridy = 0;
         gbLayout.setConstraints(iscLabel, c);
@@ -61,13 +55,7 @@ public class InputStockCodePanel extends JPanel {
         iscButton.setBackground(Color.BLACK);
         iscButton.setForeground(Color.WHITE);
         iscButton.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
-        String t2 = null;
-        try {
-            t2 = new String("添加".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        iscButton.setText(t2);
+        iscButton.setText("添加");
         c.gridx = 1;
         c.gridy = 1;
         gbLayout.setConstraints(iscButton, c);
@@ -77,13 +65,7 @@ public class InputStockCodePanel extends JPanel {
         aLabel.setPreferredSize(new Dimension(200, 22));
         aLabel.setBackground(Color.BLACK);
         aLabel.setForeground(Color.WHITE);
-        String t3 = null;
-        try {
-            t3 = new String("确保股票代码".getBytes("GBK"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        aLabel.setText(t3);
+        aLabel.setText("确保股票代码正确");
         c.gridx = 0;
         c.gridy = 2;
         gbLayout.setConstraints(aLabel, c);
